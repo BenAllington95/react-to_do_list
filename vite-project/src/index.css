@@ -16,6 +16,7 @@ p, h1, h2, h3, h4 {
   max-width: 500px;
   margin: 0 auto;
   padding: 2em 1em;
+  font-family: "Open Sans", sans-serif;
 }
 .App .input-container {
   display: flex;
@@ -32,6 +33,9 @@ p, h1, h2, h3, h4 {
   box-sizing: border-box;
   width: 85%;
   transition: 0.2s all;
+}
+.App .input-container .input-el:focus {
+  outline: none;
 }
 .App .input-container .input-el:focus, .App .input-container .input-el:focus + .button {
   background: whitesmoke;
