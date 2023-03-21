@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p,h1,h2,h3,h4 {
+    margin: 0;
+}
+
+.App {
+    
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2em 1em;
+        
+    .input-container {
+        
+        display: flex;
+        align-items: center;
+        width: 100%;
+        
+         
+        .input-el {
+            padding-left: 15px;
+            height: 40px;
+            border: 1px solid #C0C0C0;
+            border-top-left-radius: 25px;
+            border-right: none;
+            border-bottom-left-radius: 25px;
+            box-sizing: border-box;
+            width: 85%;
+            transition: 0.2s all;
+            
+            &:focus,
+            &:focus + .button {
+                background: whitesmoke;
+            }
+            
+            &:hover,
+            &:hover + .button {
+                background: #e7e7e7;
+            }
+        }
+    
+        .input-el, .button {
+            box-shadow: 0px 5px 0px 0px #C0C0C0;
+        }
+    
+        
+        .button {
+            height: 40px;
+            background: white;
+            border: 1px solid #C0C0C0;
+            border-left: none;
+            width: 15%;
+            font-weight: bold;
+            cursor: pointer;
+            color: #252525;
+            transition: all 0.2s;
+            border-bottom-right-radius: 25px;
+            border-top-right-radius: 25px;
+            display: grid;
+            place-content: center;
+            
+            ion-icon[name="add-outline"] {
+                color: #C0C0C0;
+                font-size: 1.5rem;
+                line-height: 0;
+            }
+        }        
+    }
+    
+    
+    .tasks {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;    
+        
+        .tasks-heading {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin: 1em 0;
+                
+                .completed {
+                    padding: 0.5em 0.75em;
+                    background: #e7e7e7;
+                    color: #333333;
+                    border-bottom: 5px solid #C0C0C0;
+                    border-radius: 10px;
+                    letter-spacing: 0.2px;
+                    text-align: right;
+                } // completed
+                
+                .to-do-header {
+                    color: #333333;
+                    letter-spacing: 0.2px;
+                    width: 60%;
+                }  // to-do  
+            } // .tasks-heading
+    
+        .task {
+            width: 100%;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+            border-radius: 10px;
+            margin-bottom: 0.5em;
+                        
+            .buttons {
+                width: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                border-left: 1px solid rgba(192, 192, 192, 0.4);
+                padding-left: 1em;
+                
+            } // buttons
+            
+            .task-para {
+                width: 80%;
+                padding-right: 1em;
+                line-height: 1.5;
+                letter-spacing: 0.3px;
+            } // task-para
+            
+            &:hover {
+                filter: brightness(102%)
+            } // hover
+            
+            p {
+                color: #333333;
+                font-size: 1rem;
+                word-wrap: break-word;
+            } // p
+            
+            ion-icon {
+                font-size: 2rem;  
+                cursor: pointer;             
+            } // ion-icon
+            
+            ion-icon[name="trash-sharp"] {
+                margin-left: 0.4em;                
+                &:hover {
+                    color: grey;
+                } // hover
+            } // ion-icon trash
+        } // task    
+    } // Task    
+} // App
+
+@media (max-width: 462px) {
+    .App {
+        
+        .input-container {
+            
+            .input-el {
+                width: 80%;
+            } //input el
+            .button {
+                width: 20%;
+            } // button
+        } // input container
+            
+        .tasks {
+            
+            .tasks-heading {
+                flex-direction: column;
+                align-items: flex-start;
+                                    
+                .to-do-header, 
+                .completed {
+                text-align: left;
+                }  // to-do, completed mobile   
+                
+                .to-do-header {
+                    width: 100%;
+                    margin-bottom: 0.5em;
+                } // to do header
+            } // tasks-heading
+                        
+            .task {
+                padding: 0.5em 2em;
+                flex-direction: column; 
+                margin-bottom: 0.5em;
+                            
+                .task-para,
+                .buttons {
+                    width: 100%;
+                    padding: 1em;
+                } // task para and buttons
+            
+                .task-para {
+                    text-align: center;
+                } // task para                
+            
+                .buttons {
+                    gap: 50px;
+                    justify-content: center;
+                    border-left: none;
+                    border-top: 1px solid rgba(192, 192, 192, 0.5);
+                    
+                
+                    ion-icon[name="trash-sharp"] {
+                        margin: 0;
+                    } //ion-icon trash
+                    
+                    ion-icon {
+                        font-size: 2.5rem;
+                    } // ion-icon  
+                } // .buttons                 
+            } // .task           
+        }  // .tasks
+    } // .App
+} // Media Query
