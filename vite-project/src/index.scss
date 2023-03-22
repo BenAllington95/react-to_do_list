@@ -24,6 +24,8 @@ p,h1,h2,h3,h4 {
         display: flex;
         align-items: center;
         width: 100%;
+        box-shadow: 0px 5px 0px 0px #C0C0C0;
+        border-radius: 25px;
         
          
         .input-el {
@@ -31,11 +33,14 @@ p,h1,h2,h3,h4 {
             height: 40px;
             border: 1px solid #C0C0C0;
             border-top-left-radius: 25px;
+            border-top-right-radius: 0px;
             border-right: none;
             border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 0px;
             box-sizing: border-box;
             width: 85%;
             transition: 0.2s all;
+            font-family: inherit;
 
             &:focus {
                 outline: none;
@@ -52,10 +57,6 @@ p,h1,h2,h3,h4 {
             }
         }
     
-        .input-el, .button {
-            box-shadow: 0px 5px 0px 0px #C0C0C0;
-        }
-    
         
         .button {
             height: 40px;
@@ -69,6 +70,8 @@ p,h1,h2,h3,h4 {
             transition: all 0.2s;
             border-bottom-right-radius: 25px;
             border-top-right-radius: 25px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
             display: grid;
             place-content: center;
             
@@ -146,6 +149,7 @@ p,h1,h2,h3,h4 {
                 color: #333333;
                 font-size: 1rem;
                 word-wrap: break-word;
+                font-weight: bold;
             } // p
             
             ion-icon {
